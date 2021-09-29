@@ -167,5 +167,91 @@ namespace ConsoleApp1
             return Lod.Max();
         }
 
+        public  int countingValleys(int steps, string path)
+        {
+            int v = 0;
+            List<int> List = new List<int>();
+            List.Add(0);
+            for (int i = 0; i < path.Length; i++)
+            {
+                if (path[i] == 'U')
+                {
+                    v = v + 1;
+                    List.Add(v);
+                }
+                else
+                {
+                    v = v - 1;
+                    List.Add(v);
+                }
+            }
+            List.Add(0);
+            int down_count = 0;
+            bool InLine = false;
+            for (int i =0; i < List.Count; i++)
+            {
+                if (List[i] == 0)
+                {
+                    InLine=true;
+                }
+                if (List[i] < 0&& InLine)
+                {
+                    down_count++;
+                    InLine = false;
+                }
+            }
+            return down_count;
+        }
+
+        public  string receivedText(string S)
+        {
+            // WRITE DOWN YOUR CODE HERE
+
+            //
+            int now_index = 0;
+            bool First = true;
+            string first_str = string.Empty;
+            bool Nub_Ok = true; 
+            string Values = string.Empty;
+            for(int i = 0; i < S.Length; i++)
+            {
+
+                if (S[i]== '<') //回到最前面
+                {
+
+                }
+                if(S[i] == '>')//最後面
+                {
+ 
+                }
+                if(S[i] == '*') //刪除
+                {
+       
+                }
+                if (S[i] == '#')
+                {
+
+                }
+                else
+                {
+                    
+                }
+            }
+
+
+            return string.Empty;
+        }
+
+
+
+        public  int jumpingOnClouds(List<int> c)
+        {
+            var jumps = 0;
+            for (int i = 0; i < c.Count - 1; i++, jumps++)
+                if (i + 2 < c.Count && c[i + 2] == 0)
+                    i++;
+
+            return jumps;
+        }
     }
 }
