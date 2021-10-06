@@ -253,5 +253,142 @@ namespace ConsoleApp1
 
             return jumps;
         }
+
+
+        public  string twoStrings(string s1, string s2)
+        {
+            string c = "abcdefghijklmnopqrstuvwxyz";
+
+            for (int i = 0; i < c.Length; i++)
+            {
+                if (s1.Contains(c[i]) && s2.Contains(c[i]))
+                {
+                    return "YES";
+                }
+            }
+            return "NO";
+        }
+
+
+        public static int maximumToys(List<int> prices, int k)
+        {
+            prices.Sort();
+            int count = 0;
+            int prices_now = 0;
+            for (int i = 0; i < prices.Count; i++)
+            {
+                prices_now = prices_now + prices[i];
+                if (prices_now < k)
+                    count++;
+                else
+                    return count;
+            }
+            return count;
+        }
+
+        public  int alternatingCharacters(string s)
+        {
+            int count = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (i+1 == s.Length)
+                {
+                    if (s[i] != s[i - 1])
+                        continue;
+                }
+                else {
+
+                    if (s[i] != s[i + 1])
+                        continue;
+                    else if (s[i] == 0)
+                    {
+                        if (s[i] != s[i - 1])
+                            continue;
+                        else
+                            count++;
+                    }               
+                    else
+                        count++;
+                }              
+            }
+            return count;
+        }
+
+        public  int makeAnagram(string a, string b)
+        {
+            string abc = "abcdefghijklmnopqrstuvwxyz";
+            int count = 0;
+            for (int i = 0; i < abc.Length; i++)
+            {
+                if (!a.Contains(abc[i]) && !b.Contains(abc[i]))
+                {
+                    int a_b_difff = a.Split(abc[i]).Length != b.Split(abc[i]).Length ? Math.Abs(a.Split(abc[i]).Length - b.Split(abc[i]).Length) : 0;
+                    count = count + a_b_difff;
+                }
+                else if (!a.Contains(abc[i]) && b.Contains(abc[i]))
+                {
+                    int str_count = a.Split(abc[i]).Length;
+                    count = count + str_count;
+                }
+                else if (a.Contains(abc[i]) && !b.Contains(abc[i]))
+                {
+                    int str_count = b.Split(abc[i]).Length;
+                    count = count + str_count;
+                }
+            }
+            return count;
+        }
+
+
+        public static void minimumBribes(List<int> q)
+        {
+            int count = 0;
+            for (int i = 0; i < q.Count; i++)
+            {
+                if (q[i] > q[i + 1])
+                {
+                    count++;
+                }
+
+            }
+        }
+
+        public  List<int> rotLeft(List<int> a, int d)
+        {    
+            List<int> List = a;
+            List<int> List_new = new List<int>();       
+            for (int i = 0; i < d; i++)
+            {
+                List_new = new List<int>();
+                for (int j = 0; j < List.Count; j++)
+                {
+                    if (j == List.Count - 1)
+                        List_new.Add(List[0]);
+                    else
+                        List_new.Add(List[j + 1]);
+                }
+                List = List_new;
+                
+            }
+            return List;
+        }
+
+
+        public  int sockMerchantKai(int n, List<int> ar)
+        {
+            int count = 0;
+            //string Socks = string.Empty;
+            string reco = string.Empty;
+            for (int i = 0; i < n; i++)
+            {
+                if (reco.Contains(";"+ar[i].ToString()+";"))
+                    continue;
+                int Socks = ar.FindAll(x => x == ar[i]).Count;
+                count += Socks >= 2 ? Socks / 2 : 0;
+                reco += ";"+ar[i].ToString() + ";";
+            }
+            return count;
+        }
+
     }
 }

@@ -9,3 +9,6 @@ C:\Leetcode\LeetCodeTest\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.As
 C:\Leetcode\LeetCodeTest\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
 C:\Leetcode\LeetCodeTest\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Leetcode\LeetCodeTest\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Leetcode\LeetCodeTest\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Leetcode\LeetCodeTest\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Leetcode\LeetCodeTest\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb

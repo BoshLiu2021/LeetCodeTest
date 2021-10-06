@@ -22,8 +22,16 @@ namespace ConsoleApp1
             //int[] view= leetCode.Two_Pointers(arr1);
 
 
-            int zz= leetCode.sockMerchant(9, arr1.ToList());
-            Console.WriteLine(zz.ToString());
+            //int zz= leetCode.makeAnagram("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke");
+            List<int> a = new List<int>();
+            a.Add(1);
+            a.Add(2);
+            a.Add(3);
+            a.Add(4);
+            a.Add(5);
+            List<int> result = leetCode.rotLeft(a, 4);
+
+            Console.WriteLine(String.Join(" ", result));
 
             Console.ReadKey();
 
